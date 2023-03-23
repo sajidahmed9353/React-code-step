@@ -1,22 +1,23 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export class Test extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     data: 1,
-  //   };
-  // }
-  // clickHandler() {
-  //   this.setState({ data: this.state.data + 1 });
-  // }
-  render() {
-    return (
-      <div>
-        <h1>Hello {this.props.name}</h1>
-      </div>
-    );
-  }
+function Test() {
+  const [text, setText] = useState("");
+  const [visible, setVisible] = useState(false);
+  return (
+    <div>
+      <h1>Form</h1>
+      <label>Email</label>
+      <input
+        onChange={(e) => {
+          setText(e.target.value);
+          setVisible(false);
+        }}
+      />
+      <br />
+      <button onClick={() => setVisible(true)}>Show</button>
+      {visible ? <h3>{text}</h3> : null}
+    </div>
+  );
 }
 
 export default Test;
