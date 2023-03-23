@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Test() {
   const [text, setText] = useState("");
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   return (
     <div>
       <h1>Form</h1>
@@ -10,11 +10,10 @@ function Test() {
       <input
         onChange={(e) => {
           setText(e.target.value);
-          setVisible(false);
         }}
       />
       <br />
-      <button onClick={() => setVisible(true)}>Show</button>
+      <button onClick={() => setVisible(!visible)}>Toggle</button>
       {visible ? <h3>{text}</h3> : null}
     </div>
   );
