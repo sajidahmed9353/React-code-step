@@ -1,23 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-export class Test extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: 1,
-    };
-  }
-  clickHandler() {
-    this.setState({ data: this.state.data + 1 });
-  }
-  render() {
-    return (
-      <div>
-        <h1>Hello{this.state.data}</h1>
-        <button onClick={() => this.clickHandler()}>Click Me</button>
-      </div>
-    );
-  }
+function Test(props) {
+  return (
+    <div>
+      <h1>Hello {props.name}</h1>
+      <h1> {props.details.phone}</h1>
+      <h1> {props.details.pass}</h1>
+    </div>
+  );
 }
 
 export default Test;

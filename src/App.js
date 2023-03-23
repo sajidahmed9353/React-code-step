@@ -3,17 +3,11 @@ import React, { useState } from "react";
 import Test from "./components/Test";
 
 function App() {
-  const [text, setText] = useState("");
-  const clickHandler = () => {
-    alert("Hi");
-    setText("Sajid");
-  };
+  const [text, setText] = useState("sajid");
   return (
     <>
-      {/* <h1>Hello {text}</h1>
-      <button onClick={clickHandler}>Click Me</button>
-      <button onClick={() => alert("Hello")}>Click Me2</button> */}
-      <Test/>
+      <Test name={text} details={{ phone: "04323", pass: "600" }} />
+      <button onClick={() => setText("fahim")}>Click me</button>
     </>
   );
 }
