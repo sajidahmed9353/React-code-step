@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 function Test() {
   const [text, setText] = useState("");
-  const [visible, setVisible] = useState(true);
+  const [select, setSelect] = useState("");
+  const [checkbox, setCheckbox] = useState(false);
+
   return (
     <div>
       <h1>Form</h1>
@@ -13,8 +15,27 @@ function Test() {
         }}
       />
       <br />
-      <button onClick={() => setVisible(!visible)}>Toggle</button>
-      {visible ? <h3>{text}</h3> : null}
+      <select
+        onChange={(e) => {
+          setSelect(e.target.value);
+        }}
+      >
+        <option>Sajid</option>
+        <option>fahim</option>
+        <option>kadir</option>
+      </select>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        onChange={(e) => {
+          setCheckbox(e.target.checked);
+        }}
+      />
+      <button onClick={() => console.log(text, select, checkbox)}>
+        submit
+      </button>
+      <h3>{text}</h3>
     </div>
   );
 }
