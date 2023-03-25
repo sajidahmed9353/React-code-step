@@ -8,17 +8,16 @@ export class App extends Component {
       name: "sajid",
     };
   }
-  componentDidMount() {
-    console.log("componentDidMount");
+  componentDidUpdate() {
+    console.log("componentDidUpdate");
   }
+
   render() {
     console.log("render");
     return (
       <div>
         <h1>Hello {this.state.name}</h1>
-        <button onClick={() => this.setState({ name: "kadir" })}>
-          Click 
-        </button>
+        <button onClick={() => this.setState({ name: "kadir" })}>Click</button>
       </div>
     );
   }
