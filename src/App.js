@@ -1,14 +1,27 @@
-import React from "react";
-import Test from "./components/Test";
+import React, { Component } from "react";
 
-function App() {
-  const [name, setName] = React.useState("");
-  return (
-    <div className="App">
-      <Test name={name} />
-      <button onClick={() => setName("fahim")}>Click</button>
-    </div>
-  );
+export class App extends Component {
+  constructor() {
+    super();
+    console.log("constructor");
+    this.state = {
+      name: "sajid",
+    };
+  }
+  componentDidMount() {
+    console.log("componentDidMount");
+  }
+  render() {
+    console.log("render");
+    return (
+      <div>
+        <h1>Hello {this.state.name}</h1>
+        <button onClick={() => this.setState({ name: "kadir" })}>
+          Click 
+        </button>
+      </div>
+    );
+  }
 }
 
 export default App;
