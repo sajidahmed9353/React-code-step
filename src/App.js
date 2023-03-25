@@ -8,8 +8,10 @@ export class App extends Component {
       name: "sajid",
     };
   }
-  componentDidUpdate() {
-    console.log("componentDidUpdate");
+
+  shouldComponentUpdate() {
+    console.log("shouldComponentUpdate");
+    return true;
   }
 
   render() {
