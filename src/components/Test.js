@@ -13,7 +13,9 @@ export class Test extends Component {
     return (
       <div>
         <h1>Hello {this.state.name}</h1>
+        <button onClick={() => this.setState({name:'kadir'})}>Click 2</button>
       </div>
+
     );
   }
 }
