@@ -1,25 +1,21 @@
 import React, { Component } from "react";
+import Test from "./components/Test";
 
 export class App extends Component {
   constructor() {
     super();
-    console.log("constructor");
     this.state = {
-      name: "sajid",
+      show: false,
     };
   }
 
-  shouldComponentUpdate() {
-    console.log("shouldComponentUpdate");
-    return true;
-  }
-
   render() {
-    console.log("render");
     return (
       <div>
-        <h1>Hello {this.state.name}</h1>
-        <button onClick={() => this.setState({ name: "kadir" })}>Click</button>
+        {this.state.show ? <Test /> : null}
+        <button onClick={() => this.setState({ show: !this.state.show })}>
+          Click
+        </button>
       </div>
     );
   }
